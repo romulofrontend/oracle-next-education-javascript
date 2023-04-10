@@ -2,7 +2,9 @@ const adivinhaCampo = document.querySelector(".adivinha-campo");
 
 const adivinhaBotao = document.querySelector(".adivinha-botao");
 
-const numeroSecreto = "5";
+const numeroSecreto = Math.round(Math.random() * 10);
+
+console.log(numeroSecreto)
 
 function adivinhaVerifica(){
   if(adivinhaCampo.value == numeroSecreto){
