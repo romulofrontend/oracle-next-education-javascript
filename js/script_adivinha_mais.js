@@ -6,10 +6,14 @@ const numeroSecreto = "5";
 
 function adivinhaVerifica(){
   if(adivinhaCampo.value == numeroSecreto){
-    document.write("Você acertou!")
+    alert("Você acertou!")
   }else{
-    document.write("Você errou!")
+    alert("Você errou!")
   }
+
+  adivinhaCampo.value = "";
+  adivinhaCampo.focus();
+  
 }
 
 adivinhaBotao.onclick = adivinhaVerifica;
