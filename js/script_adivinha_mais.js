@@ -1,20 +1,24 @@
 const adivinhaCampo = document.querySelector(".adivinha-campo");
-adivinhaCampo.focus();
 
 const adivinhaBotao = document.querySelector(".adivinha-botao");
 
-const numeroSecreto = Math.round(Math.random() * 10);
+const segredos = [4,5,6,7];
 
-function adivinhaVerifica(){
-  if(adivinhaCampo.value == numeroSecreto){
-    alert("Você acertou!")
-  }else{
-    alert("Você errou!")
+function verifica(){
+  const adivinhaCampoValor = parseInt(adivinhaCampo.value);
+
+  let achou = false;
+  for(let i = 0; i < segredos.length; i++){
+    if(adivinhaCampoValor === segredos[i]){
+      alert("Você acertou");
+      achou = true;
+      i = segredos.length;
+    }
+
+    if(achou === false){
+      alert("Você errou!"); 
+    }
   }
-
-  adivinhaCampo.value = "";
-  adivinhaCampo.focus();
-  
 }
 
-adivinhaBotao.onclick = adivinhaVerifica;
+adivinhaBotao.onclick = verifica;
