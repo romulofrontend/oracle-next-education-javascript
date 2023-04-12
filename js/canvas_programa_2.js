@@ -2,19 +2,26 @@ var tela = document.querySelector('.tela');
 
 var pincel = tela.getContext('2d');
 
-function createSquare(color, positionX, positionY, sizeX, sizeY, colorStroke){
-  pincel.fillStyle = color;
-  pincel.fillRect(positionX, positionY,sizeX,sizeY);
-  pincel.fillStroke = colorStroke;
-  pincel.strokeRect(positionX, positionY,sizeX,sizeY);
+
+function createSquareLine(color, positionX, positionY, sizeX, sizeY, colorStroke){
+  while(positionX < 600){
+    pincel.fillStyle = color;
+    pincel.fillRect(positionX, positionY,sizeX,sizeY);
+    pincel.fillStroke = colorStroke;
+    pincel.strokeRect(positionX, positionY,sizeX,sizeY);
+    positionX += 100;
+  }
 }
 
-createSquare('red',0,0,100,100,'black');
-createSquare('green',100,0,100,100,'black');
-createSquare('blue',200,0,100,100,'black')
-createSquare('yellow',300,0,100,100,'black')
+sizeX = 100;
+sizeY = 100;
+colorStroke = 'black'
 
-createSquare('yellow',0,100,100,100,'black')
-createSquare('blue',100,100,100,100,'black')
-createSquare('green',200,100,100,100,'black');
-createSquare('red',300,100,100,100,'black');
+createSquareLine('red',0,0,sizeX,sizeY,colorStroke);
+
+createSquareLine('green',0,100,sizeX,sizeY,colorStroke);
+
+createSquareLine('blue',0,200,sizeX,sizeY,colorStroke);
+
+createSquareLine('yellow',0,300,sizeX,sizeY,colorStroke);
+
